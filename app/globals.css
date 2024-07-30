@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.sound-only{
-	width: 0;
-	height: 0;
-	position: absolute;
-	left: -9999px;
-	opacity: 0;
-	overflow: hidden;
-}
+.sound-only{width: 0!important; height: 0!important; position: absolute!important; left: -9999px!important; opacity: 0!important; overflow: hidden!important;}
+
+.banner .slick-slide{font-size: 0;}
+.banner .slick-slide img{width: 100%;}
+.banner .slick-dots{width: auto; text-align: left; font-size: 0; bottom: 15px; left: 15px;}
+.banner .slick-dots li{width: auto; height: auto; margin: 0 8px 0 0;}
+.banner .slick-dots li button{width: 12px; height: 12px; padding: 0; border: 2px solid #fff; border-radius: 12px; box-sizing: border-box;}
+.banner .slick-dots li button:before{display: none;}
+.banner .slick-dots li.slick-active button{background-color: #fff;}

@@ -1,12 +1,16 @@
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Banner from "./components/Banner";
 
 export default function Home() {
   return (
     <>
-			<Header />
+      <Header />
       <main className="w-[1000px] m-auto">
-				<img src="https://dev-www.lalatoon.com/assets/web/img/banner/2024_LT_contest_ing-pc_kr.png" alt="" />
-			</main>
+        <Banner />
+        <h3>오늘의 웹툰</h3>
+      </main>
+      <Footer />
     </>
   );
 }
