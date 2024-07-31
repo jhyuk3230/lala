@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useNavStore } from "../hook/Store";
+import { useState } from "react";
 
 export default function Header() {
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
@@ -8,9 +9,21 @@ export default function Header() {
     setIsNavActive(true);
   };
 
+	const [isAdult, setIsAdult] = useState(false);
+
+	const onAdult = () => {
+		setIsAdult(prevState => !prevState);
+	}
+
   return (
     <>
 			<div className="flex justify-end items-center gap-4">
+				<button className={`adult__btn w-[52px] h-[26px] rounded-[26px] relative ${isAdult ? 'active' : ''} ${isAdult ? 'bg-red-500' : 'bg-gray-200'}`} onClick={onAdult}>
+					<p className={`w-[26px] h-[26px] border-2 border-red-500 rounded-[26px] bg-white text-[12px] font-bold absolute top-[50%] translate-y-[-50%] ${isAdult ? 'right-0' : 'left-0'}`}>
+						<span className="leading-[22px]">19</span>
+					</p>
+				</button>
+
 				<Link className="search-btn" href="/search">
 					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
 					  <path d="M13.94 22.88C18.8774 22.88 22.88 18.8774 22.88 13.94C22.88 9.00257 18.8774 5 13.94 5C9.00257 5 5 9.00257 5 13.94C5 18.8774 9.00257 22.88 13.94 22.88Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

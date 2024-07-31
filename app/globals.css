@@ -22,7 +22,5 @@ body::after{content: ''; width: calc((100vw - 785px) / 2); height: 100vh; displa
 	.nav.active{right: calc((100vw - 785px) / 2);}
 }
 
-.profile-img{transform: translate(-50%, -50%);}
-
 .search__form{width: calc(100% - 36px);}
-.search__btn, .search__close, .search__thumb{transform: translate(-50%, -50%);}
+.profile-img, .search__btn, .search__close, .search__thumb{transform: translate(-50%, -50%);}
