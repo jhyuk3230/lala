@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 import ListSlide from "./components/ListSlide";
@@ -7,7 +8,8 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="max-w-[1000px] w-full m-auto">
+      <Nav />
+      <main>
         <Banner />
 
         <section className="p-4 pb-2 bg-gray-100">

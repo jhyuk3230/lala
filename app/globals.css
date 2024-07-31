@@ -11,3 +11,18 @@
 .banner .slick-dots li button{width: 12px; height: 12px; padding: 0; border: 2px solid #fff; border-radius: 12px; box-sizing: border-box;}
 .banner .slick-dots li button:before{display: none;}
 .banner .slick-dots li.slick-active button{background-color: #fff;}
+
+body::before{content: ''; width: calc((100vw - 785px) / 2); height: 100vh; display: inline-block; background-color: #fff; position: fixed; top: 0; left: 0; z-index: 3;}
+body::after{content: ''; width: calc((100vw - 785px) / 2); height: 100vh; display: inline-block; background-color: #fff; position: fixed; top: 0; right: 0; z-index: 3;}
+
+.nav.active{right: 0;}
+.nav-btn.active span{top: calc(50% - 1px);}
+
+@media (min-width: 768px) {
+	.nav.active{right: calc((100vw - 785px) / 2);}
+}
+
+.profile-img{transform: translate(-50%, -50%);}
+
+.search__form{width: calc(100% - 36px);}
+.search__btn, .search__close, .search__thumb{transform: translate(-50%, -50%);}

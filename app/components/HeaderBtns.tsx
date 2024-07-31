@@ -1,0 +1,29 @@
+"use client"
+import Link from "next/link";
+import { useNavStore } from "../hook/Store";
+
+export default function Header() {
+	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
+	const onNav = () => {
+    setIsNavActive(true);
+  };
+
+  return (
+    <>
+			<div className="flex justify-end items-center gap-4">
+				<Link className="search-btn" href="/search">
+					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+					  <path d="M13.94 22.88C18.8774 22.88 22.88 18.8774 22.88 13.94C22.88 9.00257 18.8774 5 13.94 5C9.00257 5 5 9.00257 5 13.94C5 18.8774 9.00257 22.88 13.94 22.88Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+					  <path d="M20.2402 20.2422L23.9002 23.9022" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+					</svg>
+				</Link>
+
+        <button className="nav-btn w-5 h-4 relative" onClick={onNav}>
+          <span className="w-full h-[2px] bg-black inline-block duration-200 absolute left-0 top-0"></span>
+          <span className="w-full h-[2px] bg-black inline-block duration-200 absolute left-0 top-[8px]"></span>
+          <span className="w-full h-[2px] bg-black inline-block duration-200 absolute left-0 top-[16px]"></span>
+        </button>
+      </div>
+		</>
+  );
+}

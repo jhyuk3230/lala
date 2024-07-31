@@ -11,10 +11,12 @@ export default function Banner() {
 		arrows: false,
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-		fade: true
+		fade: true,
+		autoplay: true,
+		autoplaySpeed: 5000
   };
 
   return (
