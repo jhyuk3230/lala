@@ -24,3 +24,7 @@ body::after{content: ''; width: calc((100vw - 785px) / 2); height: 100vh; displa
 
 .search__form{width: calc(100% - 36px);}
 .profile-img, .search__btn, .search__close, .search__thumb{transform: translate(-50%, -50%);}
+
+.listbanner__text{display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
+.listbanner__favorite-plus:before{content: ''; width: 2px; height: 10px; display: inline-block; background-color: #fff; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-sizing: border-box;}
+.listbanner__favorite-plus:after{content: ''; width: 10px; height: 2px; display: inline-block; background-color: #fff; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-sizing: border-box;}
