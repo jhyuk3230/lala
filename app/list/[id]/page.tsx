@@ -2,6 +2,7 @@ import Header from '../../components/Header'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import ListBanner from "../../components/ListBanner";
+import ListInfo from "../../components/ListInfo";
 
 export default function List() {
   return (
@@ -9,10 +10,9 @@ export default function List() {
       <Header />
       <Nav />
       <main>
-				<ListBanner />
-
-				<section className='mt-10'></section>
-			</main>
+        <ListBanner />
+        <ListInfo />
+      </main>
       <Footer />
     </>
   );

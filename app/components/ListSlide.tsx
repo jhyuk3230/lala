@@ -1,29 +1,20 @@
+"use client"
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function ListSlide() {
-	const list: any = [
-		{ id: 1, img: "/dummy.jpg" },
-		{ id: 2, img: "/dummy.jpg" },
-		{ id: 3, img: "/dummy.jpg" },
-		{ id: 4, img: "/dummy.jpg" },
-		{ id: 5, img: "/dummy.jpg" },
-		{ id: 6, img: "/dummy.jpg" },
-		{ id: 7, img: "/dummy.jpg" },
-		{ id: 8, img: "/dummy.jpg" },
-		{ id: 9, img: "/dummy.jpg" }
-	];
+	const [list, setList] = useState([]);
+	const [list2, setList2] = useState([]);
+	const getList = async () => {
+		const responsive = await fetch("/db.json");
+		const json = await responsive.json();
+		setList(json.list);
+		setList2(json.list2);
+	}
 
-	const list2: any = [
-    { id: 10, img: "/dummy.jpg" },
-    { id: 11, img: "/dummy.jpg" },
-    { id: 12, img: "/dummy.jpg" },
-    { id: 13, img: "/dummy.jpg" },
-    { id: 14, img: "/dummy.jpg" },
-    { id: 15, img: "/dummy.jpg" },
-    { id: 16, img: "/dummy.jpg" },
-    { id: 17, img: "/dummy.jpg" },
-    { id: 18, img: "/dummy.jpg" },
-  ];
+	useEffect(() => {
+		getList();
+	}, []);
 
   return (
     <section className="listSlide w-full overflow-x-auto">

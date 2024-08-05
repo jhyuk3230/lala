@@ -1,0 +1,25 @@
+{
+	"list": [
+		{ "id": 1, "img": "/dummy.jpg", "title": "타이틀1" },
+		{ "id": 2, "img": "/dummy.jpg", "title": "타이틀2" },
+		{ "id": 3, "img": "/dummy.jpg", "title": "타이틀3" },
+		{ "id": 4, "img": "/dummy.jpg", "title": "타이틀4" },
+		{ "id": 5, "img": "/dummy.jpg", "title": "타이틀5" },
+		{ "id": 6, "img": "/dummy.jpg", "title": "타이틀6" },
+		{ "id": 7, "img": "/dummy.jpg", "title": "타이틀7" },
+		{ "id": 8, "img": "/dummy.jpg", "title": "타이틀8" },
+		{ "id": 9, "img": "/dummy.jpg", "title": "타이틀9" }
+	],
+
+	"list2": [
+    { "id": 10, "img": "/dummy.jpg", "title": "타이틀10" },
+    { "id": 11, "img": "/dummy.jpg", "title": "타이틀11" },
+    { "id": 12, "img": "/dummy.jpg", "title": "타이틀12" },
+    { "id": 13, "img": "/dummy.jpg", "title": "타이틀13" },
+    { "id": 14, "img": "/dummy.jpg", "title": "타이틀14" },
+    { "id": 15, "img": "/dummy.jpg", "title": "타이틀15" },
+    { "id": 16, "img": "/dummy.jpg", "title": "타이틀16" },
+    { "id": 17, "img": "/dummy.jpg", "title": "타이틀17" },
+    { "id": 18, "img": "/dummy.jpg", "title": "타이틀18" }
+  ]
+}
