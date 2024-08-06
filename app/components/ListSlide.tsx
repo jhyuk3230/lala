@@ -22,7 +22,7 @@ export default function ListSlide() {
         {list.map((e: any) => (
           <div className="max-w-[100px] mr-2 inline-block" key={e.id}>
             <Link href={`/list/${e.id}`}>
-              <img src={e.img} alt="" />
+              <img src={e.img} alt={e.title} />
             </Link>
           </div>
         ))}
@@ -31,7 +31,7 @@ export default function ListSlide() {
         {list2.map((e: any) => (
           <div className="max-w-[100px] mr-2 inline-block" key={e.id}>
             <Link href={`/list/${e.id}`}>
-              <img src={e.img} alt="" />
+              <img src={e.img} alt={e.title} />
             </Link>
           </div>
         ))}
