@@ -2,22 +2,6 @@
 // import { useEffect, useState } from "react";
 
 export default function ListInfo() {
-  // const [list, setList] = useState([]);
-  // const [list2, setList2] = useState([]);
-  // const getList = async () => {
-  //   const responsive = await fetch("/db.json");
-  //   const json = await responsive.json();
-  //   setList(json.list);
-  //   setList2(json.list2);
-  // };
-
-  // useEffect(() => {
-  // 	getList();
-  // }, []);
-
-  // console.log(list)
-  // console.log(list2)
-
   return (
     <section className="mt-10">
       <article>
