@@ -1,7 +1,13 @@
-"use client"
-// import { useEffect, useState } from "react";
+import { API_URL } from "../list/[id]/page";
 
-export default function ListInfo() {
+async function getListInfo(id: string) {
+  const response = await fetch(`${API_URL}/${id}`);
+  const json = response.json();
+  return json;
+}
+
+export default async function ListInfo() {
+	// const listInfo = await getListInfo();
   return (
     <section className="mt-10">
       <article>

@@ -6,8 +6,8 @@ export default function ListSlide() {
 	const [list, setList] = useState([]);
 	const [list2, setList2] = useState([]);
 	const getList = async () => {
-		const responsive = await fetch("/db.json");
-		const json = await responsive.json();
+		const response = await fetch("/db.json");
+		const json = await response.json();
 		setList(json.list);
 		setList2(json.list2);
 	}
