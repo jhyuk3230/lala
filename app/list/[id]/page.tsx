@@ -5,6 +5,7 @@ import ListBanner from "../../components/ListBanner";
 // import ListInfo from "../../components/ListInfo";
 
 export const API_URL = "http://localhost:3000/db.json";
+// export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 async function getListInfo(id: string) {
   const response = await fetch(`${API_URL}/${id}`);
