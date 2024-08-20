@@ -1,26 +1,41 @@
+"use client"
+
 import Header from '../../components/Header'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 import ListBanner from "../../components/ListBanner";
+import { useEffect } from 'react';
 // import ListInfo from "../../components/ListInfo";
 
-export const API_URL = "http://localhost:3000/db.json";
+// export const API_URL = "http://localhost:3000/db.json";
 // export const API_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
-async function getListInfo(id: string) {
-  const response = await fetch(`${API_URL}/${id}`);
-  const json = response.json();
-  return json;
-};
+// async function getListInfo(id: string) {
+//   const response = await fetch(`${API_URL}/${id}`);
+//   const json = response.json();
+//   return json;
+// };
 
 export default async function List({params: {id},}: {params: {id: string};}) {
-	const listInfo = await getListInfo(id);
+
+	// useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     import("../mocks/browser")
+  //       .then(({ worker }) => {
+  //         worker.start();
+  //       })
+  //       .catch((err) => {
+  //         console.error("MSW worker failed to start", err);
+  //       });
+  //   }
+  // }, []);
+	// const listInfo = await getListInfo(id);
   return (
     <>
       <Header />
       <Nav />
       <main>
-        <h1>{JSON.stringify(listInfo)}</h1>
+        {/* <h1>{JSON.stringify(listInfo)}</h1> */}
         <ListBanner />
         <section className="mt-10">
           <article>
