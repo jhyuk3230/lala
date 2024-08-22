@@ -1,5 +1,6 @@
-import { setupWorker } from "msw";
+import { setupServer } from "msw/node";
+import { setupWorker } from "msw/browser";
 import { handlers } from "./handlers";
 
-// 브라우저에서 서비스 워커 설정
-export const worker = setupWorker(...handlers);
+const server = setupServer(...handlers);
+export default server;

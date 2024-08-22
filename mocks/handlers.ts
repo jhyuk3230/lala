@@ -1,16 +1,14 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw"; // 최신 API에서 `http` 대신 `rest`를 사용하는 경우가 많습니다.
 
 export const handlers = [
-  // Example API endpoint
-  rest.get("/api/data", (req: any, res: any, ctx: any) => {
-    return res(
-      ctx.status(200),
-      ctx.json({
-        items: [
-          { url: "/page1", list: ["item1", "item2"] },
-          { url: "/page2", list: ["item3", "item4"] },
-        ],
-      })
-    );
+  http.get("/api/data", ({ request }) => {
+    const data = {
+      items: [
+        { url: "/page1", list: ["item1", "item2"] },
+        { url: "/page2", list: ["item3", "item4"] },
+      ],
+    };
+
+    return HttpResponse.json(data);
   }),
 ];

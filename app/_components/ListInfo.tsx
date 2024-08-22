@@ -1,13 +1,9 @@
-import { API_URL } from "../list/[id]/page";
+import "@/_components/styles/ListInfo.css";
+import Link from "next/link";
 
-async function getListInfo(id: string) {
-  const response = await fetch(`${API_URL}/${id}`);
-  const json = response.json();
-  return json;
-}
+export default async function ListInfo({id, imgList}:{id: string, imgList:[]}) {
+	console.log(imgList);
 
-export default async function ListInfo() {
-	// const listInfo = await getListInfo();
   return (
     <section className="mt-10">
       <article>
@@ -29,7 +25,24 @@ export default async function ListInfo() {
           </div>
         </div>
       </article>
-      <article></article>
+      <article>
+        <ul>
+          {imgList.map((e: any, i:number) => (
+            <li className="border-b border-black" key={e.id}>
+							{/* <Link href={{ pathname: `/view/${e.id}`, query: { list: id } }} className="w-full py-4 flex justify-start items-center gap-[20px]"> */}
+							<Link href={`/list/${id}/${e.id}`} className="w-full py-4 flex justify-start items-center gap-[20px]">
+								<div className="w-[100px]">
+									<img src={e.logo_path} alt="" className="w-full" />
+								</div>
+              	<div className="detail__list-img flex justify-between items-center">
+              	  <p>{i + 1}. {e.name}</p>
+              	  <p className="w-[100px] text-right">{e.id}</p>
+              	</div>
+							</Link>
+            </li>
+          ))}
+        </ul>
+      </article>
     </section>
   );
 }
