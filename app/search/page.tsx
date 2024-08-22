@@ -78,17 +78,17 @@ export default function Search() {
 					</Link>
         </section>
 
-        <section className="p-[15px] bg-white rounded-t-[10px]">
+        <section className="py-[15px] bg-white rounded-t-[10px]">
 					{keyword ? 
-						<h3 className="text-[13px] pb-[10px] border-b border-[rgba(0, 0, 0, .2)] leading-[17px]">'<span className="max-w-[80%] inline-block text-red-500 whitespace-nowrap text-ellipsis overflow-hidden align-top">{keyword}</span>'에 대한 결과 0</h3> : 
-						<h3 className="text-[13px] pb-[10px] border-b border-[rgba(0, 0, 0, .2)]">최근 검색한 웹툰</h3>
+						<h3 className="text-[13px] px-[15px] pb-[10px] border-b border-[rgba(0, 0, 0, .2)] leading-[17px]">'<span className="max-w-[80%] inline-block text-red-500 whitespace-nowrap text-ellipsis overflow-hidden align-top">{keyword}</span>'에 대한 결과 0</h3> : 
+						<h3 className="text-[13px] px-[15px] pb-[10px] border-b border-[rgba(0, 0, 0, .2)]">최근 검색한 웹툰</h3>
 					}
 					<ul className={`${keyword ? "":"hidden"}`}>
 						{
 							filteredData.map((e:any, index:number)=>(
 							//react-string-replace 설치
 								<li className="border-b border-gray-50" key={index}>
-									<Link href={`/list/${e.id}`} className="py-[10px] flex justify-start items-center">
+									<Link href={`/list/${e.id}`} className="py-[10px] px-[15px] flex justify-start items-center hover:bg-[#ffeef0] focus:bg-[#ffeef0]">
 										<div className="w-[80px] h-[80px] rounded-[80px] overflow-hidden bg-black relative">
 											<img src={e.poster_path} alt=""  className="search__thumb absolute left-[50%] top-[50%]"/>
 										</div>
@@ -113,7 +113,7 @@ export default function Search() {
 							bestData.map((e:any, index:number)=>(
 							//react-string-replace 설치
 								<li className="border-b border-gray-50" key={index}>
-									<Link href="#none" className="py-[10px] flex justify-start items-center">
+									<Link href="#none" className="py-[10px] px-[15px] flex justify-start items-center hover:bg-[#ffeef0] focus:bg-[#ffeef0]">
 										<div className="w-[80px] h-[80px] rounded-[80px] overflow-hidden bg-black relative">
 											<img src="" alt=""  className="search__thumb absolute left-[50%] top-[50%]"/>
 										</div>

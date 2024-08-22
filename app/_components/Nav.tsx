@@ -1,5 +1,5 @@
 "use client"
-import { useNavStore } from "../hook/Store";
+import { useNavStore } from "@/hook/Store";
 import NavInner from "./NavInner";
 
 export default function Nav() {

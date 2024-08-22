@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useNavStore } from "../hook/Store";
-import { useState } from "react";
+import { useNavStore, useAdultStore } from "@/hook/Store";
 
 export default function Header() {
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
@@ -9,17 +8,17 @@ export default function Header() {
     setIsNavActive(true);
   };
 
-	const [isAdult, setIsAdult] = useState(false);
+	const [isAdultActive, setIsAdultActive] = useAdultStore((state) => [state.isAdultActive, state.setIsAdultActive]);
 
 	const onAdult = () => {
-		setIsAdult(prevState => !prevState);
+		setIsAdultActive(!isAdultActive);
 	}
 
   return (
     <>
 			<div className="flex justify-end items-center gap-4">
-				<button className={`adult__btn w-[52px] h-[26px] rounded-[26px] relative ${isAdult ? 'active' : ''} ${isAdult ? 'bg-red-500' : 'bg-gray-200'}`} onClick={onAdult}>
-					<p className={`w-[26px] h-[26px] border-2 border-red-500 rounded-[26px] bg-white text-[12px] font-bold absolute top-[50%] translate-y-[-50%] duration-300 ${isAdult ? 'left-[26px]' : 'left-0'}`}>
+				<button className={`adult__btn w-[52px] h-[26px] rounded-[26px] relative ${isAdultActive ? 'active' : ''} ${isAdultActive ? 'bg-red-500' : 'bg-gray-200'}`} onClick={onAdult}>
+					<p className={`w-[26px] h-[26px] border-2 border-red-500 rounded-[26px] bg-white text-[12px] font-bold absolute top-[50%] translate-y-[-50%] duration-300 ${isAdultActive ? 'left-[26px]' : 'left-0'}`}>
 						<span className="leading-[22px]">19</span>
 					</p>
 				</button>
