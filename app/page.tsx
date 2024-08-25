@@ -1,8 +1,8 @@
-import Header from "./_components/Header";
-import Nav from "./_components/Nav";
-import Footer from "./_components/Footer";
-import Banner from "./_components/Banner";
-import ListSlide from "./_components/ListSlide";
+import Header from "./_components/inc/Header";
+import Nav from "./_components/inc/Nav";
+import Footer from "./_components/inc/Footer";
+import Banner from "./_components/main/Banner";
+import ListSlide from "./_components/main/ListSlide";
 
 export default function Home() {
   return (

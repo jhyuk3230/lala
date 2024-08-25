@@ -2,8 +2,6 @@ import "@/_components/styles/ListInfo.css";
 import Link from "next/link";
 
 export default async function ListInfo({id, imgList}:{id: string, imgList:[]}) {
-	console.log(imgList);
-
   return (
     <section className="mt-10">
       <article>
@@ -29,7 +27,6 @@ export default async function ListInfo({id, imgList}:{id: string, imgList:[]}) {
         <ul>
           {imgList.map((e: any, i:number) => (
             <li className="border-b border-black" key={e.id}>
-							{/* <Link href={{ pathname: `/view/${e.id}`, query: { list: id } }} className="w-full py-4 flex justify-start items-center gap-[20px]"> */}
 							<Link href={`/list/${id}/${e.id}`} className="w-full py-4 flex justify-start items-center gap-[20px]">
 								<div className="w-[100px]">
 									<img src={e.logo_path} alt="" className="w-full" />

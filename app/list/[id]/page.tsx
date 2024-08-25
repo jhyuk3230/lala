@@ -1,8 +1,8 @@
-import Header from '@/_components/Header'
-import Nav from '@/_components/Nav'
-import Footer from '@/_components/Footer'
-import ListBanner from "@/_components/ListBanner";
-import ListInfo from "@/_components/ListInfo";
+import Header from '@/_components/inc/Header'
+import Nav from '@/_components/inc/Nav'
+import Footer from '@/_components/inc/Footer'
+import ListBanner from "@/_components/list/ListBanner";
+import ListInfo from "@/_components/list/ListInfo";
 import { API_URL } from "@/_components/url";
 
 const getListInfo = async (id:string) => {
