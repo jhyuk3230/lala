@@ -1,6 +1,8 @@
 "use client"
 import Link from "next/link";
 import { useNavStore, useAdultStore } from "@/hook/Store";
+import { setCookie, parseCookies, destroyCookie } from "nookies";
+import { useEffect } from "react";
 
 export default function Header() {
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
@@ -10,8 +12,21 @@ export default function Header() {
 
 	const [isAdultActive, setIsAdultActive] = useAdultStore((state) => [state.isAdultActive, state.setIsAdultActive]);
 
+	useEffect(() => {
+    const cookies = parseCookies();
+    const adultCookieValue = cookies.adult || "";
+    setIsAdultActive(adultCookieValue === "y");
+  }, [setIsAdultActive]);
+
 	const onAdult = () => {
-		setIsAdultActive(!isAdultActive);
+		const adultState = !isAdultActive;
+		setIsAdultActive(adultState);
+
+		if (adultState) {
+      setCookie(null, "adult", "y", { path: "/" });
+    } else {
+      destroyCookie(null, "adult", { path: "/" });
+    }
 	}
 
   return (

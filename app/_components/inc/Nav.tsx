@@ -3,8 +3,7 @@ import { useNavStore } from "@/hook/Store";
 import NavInner from "./NavInner";
 
 export default function Nav() {
-	const isNavActive = useNavStore((state) => state.isNavActive);
-	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
+	const [isNavActive, setIsNavActive] = useNavStore((state) => [state.isNavActive, state.setIsNavActive]);
 
 	const offNav = () => {
     setIsNavActive(false);

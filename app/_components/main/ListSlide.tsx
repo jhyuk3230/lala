@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import "@/_components/styles/ListSlide.css";
 import { API_URL } from "@/_components/url";
 import { useAdultStore } from "@/hook/Store";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Grid } from "swiper/modules";
 
 const getList = async () => {
   const response = await fetch(`${API_URL}`);
@@ -36,16 +38,16 @@ export default function ListSlide() {
 	});
 
   return (
-    <div className="listSlide w-full pb-1 overflow-x-auto">
-      <div className="listSlide__wrap whitespace-nowrap grid grid-rows-2 grid-flow-col gap-2">
+    <div className="listSlide w-full pb-1 overflow-hidden">
+      <Swiper modules={[Grid]} slidesPerView={"auto"} grid={{ rows: 2, fill: 'row' }} spaceBetween={8} className="listSlide__wrap text-[0px]">
         {filteredList.map((e: any) => (
-          <div className="w-[100px] inline-block" key={e.id}>
+          <SwiperSlide className="w-[100px] inline-block" key={e.id}>
             <Link href={`/list/${e.id}`}>
               <img src={e.poster_path} alt={e.title} />
             </Link>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 }

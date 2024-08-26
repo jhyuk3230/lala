@@ -1,5 +1,5 @@
-import "@/_components/styles/ListInfo.css";
 import Link from "next/link";
+import "@/_components/styles/ListInfo.css";
 
 export default async function ListInfo({id, imgList}:{id: string, imgList:[]}) {
   return (

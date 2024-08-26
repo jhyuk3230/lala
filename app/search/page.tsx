@@ -63,12 +63,6 @@ export default function Search() {
           <form action=""  className="search__form relative">
             <input type="text" id="keyword" className="search__keyword w-full h-[35px] pl-4 pr-9 rounded-[35px] text-[13px]" onChange={keywordChange} placeholder="웹툰/작가를 입력하세요"/ >  
 						<label htmlFor="keyword" className="sound-only">검색어 입력</label>
-						<button className="w-[35px] h-[35px] absolute top-0 right-0">
-							<svg className="search__btn absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							  <path d="M11.152 18.304C15.1019 18.304 18.304 15.1019 18.304 11.152C18.304 7.20206 15.1019 4 11.152 4C7.20206 4 4 7.20206 4 11.152C4 15.1019 7.20206 18.304 11.152 18.304Z" stroke="#FF3B42" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-							  <path d="M16.1919 16.1953L19.1199 19.1233" stroke="#FF3B42" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-							</svg>
-						</button>
           </form>
 					<Link href="/" className="w-[36px] relative">
 						<svg className="search__close absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
