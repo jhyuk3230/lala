@@ -33,7 +33,7 @@ export default async function view({ params }:ViewProps) {
   return (
     <>
 			<ViewHeader />
-      <section className="min-h-[100vh] mt-[62px] bg-black relative">
+      <section className="min-h-[100vh] mt-[62px] pb-[60px] bg-black relative">
         <article>
           <Image src={img} width={720} height={0} layout="intrinsic" alt="Picture of the author" className="m-auto bg-white" />
           <Image src={img} width={720} height={0} layout="intrinsic" alt="Picture of the author" className="m-auto bg-white" />
