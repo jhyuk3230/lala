@@ -28,3 +28,14 @@ body::after{content: ''; width: calc((100vw - 785px) / 2); height: 100vh; displa
 .listbanner__text{display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;}
 .listbanner__favorite-plus:before{content: ''; width: 2px; height: 10px; display: inline-block; background-color: #fff; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-sizing: border-box;}
 .listbanner__favorite-plus:after{content: ''; width: 10px; height: 2px; display: inline-block; background-color: #fff; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-sizing: border-box;}
+
+.popup__input input{
+	width: calc(100% - 80px);
+}
+
+.popup__other label:before{content: ''; width: 12px; height: 12px; border: 1px solid #000; display: inline-block; position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+.popup__other input:checked + label:before{border: 1px solid #FF5566; background-color: #FF5566;}
+.popup-close span{transform: translate(-50%, -50%) rotate(135deg);}
+.popup-close span:last-child{transform: translate(-50%, -50%) rotate(45deg);}
+
+.translate-xy-center{transform: translate(-50%, -50%);}

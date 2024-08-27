@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useNavStore, useAdultStore } from "@/hook/Store";
+import { useNavStore, useAdultStore, useLogInStore } from "@/hook/Store";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 import { useEffect } from "react";
 
@@ -11,6 +11,17 @@ export default function Header() {
   };
 
 	const [isAdultActive, setIsAdultActive] = useAdultStore((state) => [state.isAdultActive, state.setIsAdultActive]);
+	const [isLogIn, setIsLogIn] = useLogInStore((state) => [state.isLogIn, state.setIsLogIn]);
+
+	useEffect(()=>{
+		const cookies = parseCookies();
+		const adultCookieValue = cookies.adult || "";
+		const loginCookieValue = cookies.login || "";
+		if (loginCookieValue && adultCookieValue) {
+    }else{
+			destroyCookie(null, "adult", { path: "/" });
+		}
+	},[])
 
 	useEffect(() => {
     const cookies = parseCookies();
@@ -19,14 +30,18 @@ export default function Header() {
   }, [setIsAdultActive]);
 
 	const onAdult = () => {
-		const adultState = !isAdultActive;
-		setIsAdultActive(adultState);
+		if (isLogIn) {
+			const adultState = !isAdultActive;
+      setIsAdultActive(adultState);
 
-		if (adultState) {
-      setCookie(null, "adult", "y", { path: "/" });
-    } else {
-      destroyCookie(null, "adult", { path: "/" });
-    }
+      if (adultState) {
+        setCookie(null, "adult", "y", { path: "/" });
+      } else {
+        destroyCookie(null, "adult", { path: "/" });
+      }
+    }else{
+			alert("로그인을 해주세요");
+		}
 	}
 
   return (

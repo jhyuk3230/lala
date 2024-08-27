@@ -19,3 +19,13 @@ export const useAdultStore = create<AdultState>((set) => ({
   isAdultActive: false,
   setIsAdultActive: (state) => set({ isAdultActive: state }),
 }));
+
+interface LogInState {
+  isLogIn: boolean;
+  setIsLogIn: (state: boolean) => void;
+}
+
+export const useLogInStore = create<LogInState>((set) => ({
+  isLogIn: false,
+  setIsLogIn: (state) => set({ isLogIn: state }),
+}));
