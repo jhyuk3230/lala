@@ -1,8 +1,9 @@
 "use client"
 import Link from "next/link";
-import { useNavStore, useAdultStore, useLogInStore } from "@/hook/Store";
+import { useNavStore, useAdultStore, useLogInStore, usePrevStore } from "@/hook/Store";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
@@ -43,6 +44,13 @@ export default function Header() {
 			alert("로그인을 해주세요");
 		}
 	}
+
+	const [prevURL, setPrevURL] = usePrevStore((state) => [state.prevURL, state.setPrevURL]);
+	const pathname = usePathname();
+
+	useEffect(()=>{
+		setPrevURL(pathname);
+	},[])
 
   return (
     <>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import HeaderBtns from "./HeaderBtns";
 
-export default function Header() {
+export default async function Header() {
   return (
     <header className="py-4 bg-white">
 			<section className="flex justify-between items-center">

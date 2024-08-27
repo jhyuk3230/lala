@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { TOOMICS } from "@/_components/url";
+import { useState } from "react";
 
 export default function Popup({ click, closePopup, login } : {click:boolean, closePopup: () => void, login: () => void}) {
+	const [email, setEmail] = useState("");
+	const [pw, setPw] = useState("");
+
 	const onLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     login();
@@ -18,10 +23,10 @@ export default function Popup({ click, closePopup, login } : {click:boolean, clo
 					<form action="">
         	  <div className="popup__input">
         	    <label htmlFor="id" className="w-[80px] inline-block align-bottom leading-[30px]">아이디</label>
-        	    <input type="text" id="id" className="h-[30px] border-b border-b-black text-[14px] font-medium text-black align-bottom" />
+        	    <input type="text" id="id" className="h-[30px] border-b border-b-black text-[14px] font-medium text-black align-bottom" onChange={(e) => setEmail(e.target.value)} />
 
         	    <label htmlFor="pw" className="w-[80px] mt-4 inline-block align-bottom leading-[30px]">비밀번호</label>
-        	    <input type="password" id="pw" className="h-[30px] border-b border-b-black text-[14px] font-medium text-black align-bottom" />
+        	    <input type="password" id="pw" className="h-[30px] border-b border-b-black text-[14px] font-medium text-black align-bottom" onChange={(e) => setPw(e.target.value)} />
         	  </div>
 
         	  <div className="popup__other mt-4 flex justify-between items-center">

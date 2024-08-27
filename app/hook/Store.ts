@@ -29,3 +29,13 @@ export const useLogInStore = create<LogInState>((set) => ({
   isLogIn: false,
   setIsLogIn: (state) => set({ isLogIn: state }),
 }));
+
+interface prevState {
+  prevURL: string;
+  setPrevURL: (state: string) => void;
+}
+
+export const usePrevStore = create<prevState>((set) => ({
+  prevURL: "/",
+  setPrevURL: (state) => set({ prevURL: state }),
+}));

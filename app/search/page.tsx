@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import reactStringReplace from "react-string-replace";
 import { API_URL } from "@/_components/url";
+import { usePrevStore } from "@/hook/Store";
 
 const getkeywordData = async () => {
 	const response = await fetch(`${API_URL}`);
@@ -56,6 +57,8 @@ export default function Search() {
     e.original_title.toLowerCase().includes(keyword.toLowerCase())
   );
 
+	const [prevURL, setPrevURL] = usePrevStore((state) => [state.prevURL, state.setPrevURL]);
+
   return (
     <>
       <main className="bg-gray-100">
@@ -64,7 +67,7 @@ export default function Search() {
             <input type="text" id="keyword" className="search__keyword w-full h-[35px] pl-4 pr-9 rounded-[35px] text-[13px]" onChange={keywordChange} placeholder="웹툰/작가를 입력하세요"/ >  
 						<label htmlFor="keyword" className="sound-only">검색어 입력</label>
           </form>
-					<Link href="/" className="w-[36px] relative">
+					<Link href={`${prevURL}`} className="w-[36px] relative">
 						<svg className="search__close absolute top-[50%] left-[50%]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						  <path d="M6.3999 6.39844L16.7999 16.7984" stroke="black" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>
 						  <path d="M17.1998 6.79688L6.7998 17.1969" stroke="black" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round"/>

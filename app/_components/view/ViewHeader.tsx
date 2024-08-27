@@ -9,7 +9,6 @@ const prevUrl = () => {
 	return result;
 }
 
-
 export default function ViewHeader() {
 	const prev = prevUrl();
   return (
