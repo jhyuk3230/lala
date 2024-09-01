@@ -35,6 +35,7 @@ export default function Nav() {
 
     if (loginState) {
       setCookie(null, "login", "y", { path: "/" });
+      // setCookie(null, "login", "y", { maxAge: 10, path: "/" });
     } else {
       destroyCookie(null, "login", { path: "/" });
     }

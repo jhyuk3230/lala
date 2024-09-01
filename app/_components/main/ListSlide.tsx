@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "@/_components/styles/ListSlide.css";
 import { useAdultStore } from "@/hook/Store";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Grid } from "swiper/modules";
+import { Grid, FreeMode } from "swiper/modules";
 
 export default function ListSlide({ slideList }: { slideList: any[] }) {
   const [list, setList] = useState<any[]>(slideList);
@@ -23,11 +23,12 @@ export default function ListSlide({ slideList }: { slideList: any[] }) {
   return (
     <div className="listSlide w-full pb-1 overflow-hidden">
       <Swiper
-        modules={[Grid]}
+        modules={[Grid, FreeMode]}
         slidesPerView={"auto"}
         grid={{ rows: 2, fill: "row" }}
         spaceBetween={8}
         className="listSlide__wrap text-[0px]"
+        freeMode={true}
       >
         {filteredList.map((e: any) => (
           <SwiperSlide className="w-[100px] inline-block" key={e.id}>

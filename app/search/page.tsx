@@ -89,7 +89,7 @@ export default function Search() {
 												<img src={e.poster_path} alt=""  className="search__thumb absolute left-[50%] top-[50%]"/>
 											</div>
 											<div className="pl-[15px]">
-												<h4 className="mb-1 text-[13px]">{reactStringReplace(e.original_title, keyword, (match)=>(<span className="text-[#FF3B42]">{match}</span>))}</h4>
+												<h4 className="mb-1 text-[13px]">{reactStringReplace(e.original_title, keyword, (match)=>(<span className="text-[#FF3B42]" key={index}>{match}</span>))}</h4>
 												<p className="mb-[5px] text-[10px] text-gray-300">
 													{e.genre_ids.join(" / ")}
 												</p>
