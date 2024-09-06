@@ -1,41 +1,41 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 interface NavState {
-  isNavActive: boolean;
-  setIsNavActive: (state: boolean) => void;
+	isNavActive: boolean;
+	setIsNavActive: (state: boolean) => void;
 }
 
 export const useNavStore = create<NavState>((set) => ({
-  isNavActive: false,
-  setIsNavActive: (state) => set({ isNavActive: state }),
+	isNavActive: false,
+	setIsNavActive: (state) => set({ isNavActive: state }),
 }));
 
 interface AdultState {
-  isAdultActive: boolean;
-  setIsAdultActive: (state: boolean) => void;
+	isAdultActive: boolean;
+	setIsAdultActive: (state: boolean) => void;
 }
 
 export const useAdultStore = create<AdultState>((set) => ({
-  isAdultActive: false,
-  setIsAdultActive: (state) => set({ isAdultActive: state }),
+	isAdultActive: false,
+	setIsAdultActive: (state) => set({ isAdultActive: state }),
 }));
 
 interface LogInState {
-  isLogIn: boolean;
-  setIsLogIn: (state: boolean) => void;
+	isLogIn: boolean;
+	setIsLogIn: (state: boolean) => void;
 }
 
 export const useLogInStore = create<LogInState>((set) => ({
-  isLogIn: false,
-  setIsLogIn: (state) => set({ isLogIn: state }),
+	isLogIn: false,
+	setIsLogIn: (state) => set({ isLogIn: state }),
 }));
 
 interface prevState {
-  prevURL: string;
-  setPrevURL: (state: string) => void;
+	prevURL: string;
+	setPrevURL: (state: string) => void;
 }
 
 export const usePrevStore = create<prevState>((set) => ({
-  prevURL: "/",
-  setPrevURL: (state) => set({ prevURL: state }),
+	prevURL: '/',
+	setPrevURL: (state) => set({ prevURL: state }),
 }));
