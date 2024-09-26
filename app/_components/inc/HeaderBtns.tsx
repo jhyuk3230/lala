@@ -4,6 +4,8 @@ import { useNavStore, useAdultStore, useLogInStore, usePrevStore } from '@/hook/
 import { setCookie, parseCookies, destroyCookie } from 'nookies';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+// import { headerBtnWrap, adultBtn, adultBtnActive, adultBtnInner, adultBtnInnerActive } from '@/_components/inc/header.css';
+import * as styles from '@/_components/inc/header.css';
 
 export default function Header() {
 	const setIsNavActive = useNavStore((state) => state.setIsNavActive);
@@ -54,9 +56,9 @@ export default function Header() {
 
   return (
     <>
-			<div className='flex justify-end items-center gap-4'>
-				<button className={`adult__btn w-[52px] h-[26px] rounded-[26px] relative ${isAdultActive ? 'active' : ''} ${isAdultActive ? 'bg-red-500' : 'bg-gray-200'}`} onClick={onAdult}>
-					<p className={`w-[26px] h-[26px] border-2 border-red-500 rounded-[26px] bg-white text-[12px] font-bold absolute top-[50%] translate-y-[-50%] duration-300 ${isAdultActive ? 'left-[26px]' : 'left-0'}`}>
+			<div className={styles.headerBtnWrap}>
+				<button className={`${styles.adultBtn} ${isAdultActive ? styles.adultBtnActive : ''}`} onClick={onAdult}>
+					<p className={`${styles.adultBtnInner} ${isAdultActive ? styles.adultBtnInnerActive : 'left-0'}`}>
 						<span className='leading-[22px]'>19</span>
 					</p>
 				</button>

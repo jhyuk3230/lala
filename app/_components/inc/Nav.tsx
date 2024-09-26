@@ -56,7 +56,7 @@ export default function Nav() {
 
   return (
 		<>
-			<aside className={`nav w-[300px] h-screen rounded-tl-[15px] rounded-bl-[15px] bg-white text-center fixed top-0 right-0 z-[2] duration-300 overflow-hidden ${isNavActive ? 'active' : ''}`}>
+			<aside className={`nav w-[300px] h-screen rounded-tl-[15px] rounded-bl-[15px] bg-white text-center fixed top-0 right-0 z-[3] duration-300 overflow-hidden ${isNavActive ? 'active' : ''}`}>
 				<div className='px-4 py-[75px] bg-red-300'>
 					{!isLogIn ?
 					<>
@@ -113,7 +113,7 @@ export default function Nav() {
 				</nav>
 			</aside>
 
-			<div className={`nav-bg w-full h-screen bg-black opacity-40 fixed top-0 left-0 z-[1] ${isNavActive ? 'block' : 'hidden'}`} onClick={offNav}></div>
+			<div className={`nav-bg w-full h-screen bg-black opacity-40 fixed top-0 left-0 z-[2] ${isNavActive ? 'block' : 'hidden'}`} onClick={offNav}></div>
 		</>
   );
 }

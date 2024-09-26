@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import HeaderBtns from './HeaderBtns';
+import * as styles from '@/_components/inc/header.css';
 
 export default async function Header() {
   return (
-    <header className='py-4 bg-white'>
-			<section className='flex justify-between items-center'>
+    <header className={styles.header}>
+			<section className={styles.headerContainer}>
 				<div className='logo'>
 					<Link href='/' className='inline-block'>
 						<svg xmlns='http://www.w3.org/2000/svg' width='31' height='30' viewBox='0 0 31 30' fill='none' className='inline-block'>

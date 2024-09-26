@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Providers } from '@/provider/ReactQueryProvider';
+import ClientProvider from '@/_components/ClientProvider';
+import * as styles from '@/layout.css';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -14,8 +15,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body className="max-w-[768px] m-auto relative">
-				<Providers>{children}</Providers>
+			<body className="max-w-[768px] max-h-[100vh] overflow-hidden m-auto relative">
+				<ClientProvider>
+					<div className={ styles.innerLayout }>
+						{children}
+					</div>
+				</ClientProvider>
 			</body>
 		</html>
 	);
