@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import Link from 'next/link';
 import '@/_components/styles/ListSlide.css';
 import { useAdultStore } from '@/hook/Store';
@@ -7,10 +7,10 @@ import 'swiper/css/grid';
 import 'swiper/css/free-mode';
 import { Grid, FreeMode } from 'swiper/modules';
 import Image from 'next/image';
-import { useFetch, SlideItem } from '@/hook/useFetch';
+import { useFetch, DataItem } from '@/hook/useFetch';
 
 export default function ListSlide() {
-	const { slideList, isLoading, error } = useFetch();
+	const { dataList, isLoading, error } = useFetch();
 
 	const isAdultActive = useAdultStore((state) => state.isAdultActive);
 
@@ -18,7 +18,7 @@ export default function ListSlide() {
 
 	if (error) return "error"
 
-	const filteredList = slideList.filter((e: SlideItem) => {
+	const filteredList = dataList.filter((e: DataItem) => {
 		if (isAdultActive) {
 			return true;
 		} else {
@@ -31,7 +31,7 @@ export default function ListSlide() {
 	return (
 		<div className="listSlide w-full pb-1 overflow-hidden">
 			<Swiper modules={[Grid, FreeMode]} slidesPerView={'auto'} grid={{ rows: 2, fill: 'row' }} spaceBetween={8} className="listSlide__wrap text-[0px]" freeMode={true}>
-				{filteredList.map((e: SlideItem) => (
+				{filteredList.map((e: DataItem) => (
 					<SwiperSlide className="!w-[100px] inline-block align-top" key={e.id}>
 						<Link href={`/list/${e.id}`}>
 							<Image src={e.poster_path} width={100} height={0} alt={e.title} />

@@ -1,8 +1,7 @@
-'use client';
 import { useQuery } from '@tanstack/react-query';
 import { API_URL } from '@/_components/url';
 
-export interface SlideItem {
+export interface DataItem {
   id: number;
   poster_path: string;
   original_title: string;
@@ -11,16 +10,16 @@ export interface SlideItem {
 	title: string;
 }
 
-const listFetch = async (): Promise<SlideItem[]>=>{
+const dataFetch = async (): Promise<DataItem[]>=>{
 	const response = await fetch(API_URL);
 	return response.json();
 }
 
 export function useFetch() {
-	const { data: slideList = [], isLoading, error } = useQuery<SlideItem[]>({
+	const { data: dataList = [], isLoading, error } = useQuery<DataItem[]>({
 		queryKey: ['slideList'],
-		queryFn: listFetch
+		queryFn: dataFetch
 	});
 
-	return { slideList, isLoading, error }
+	return { dataList, isLoading, error }
 }
